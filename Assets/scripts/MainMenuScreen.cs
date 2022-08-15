@@ -17,7 +17,7 @@ public class MainMenuScreen : MonoBehaviour
     {
 
 
-        SceneManager.LoadScene("saved4");
+        SceneManager.LoadScene("Level1");
     }
 
     public void QuitGame()

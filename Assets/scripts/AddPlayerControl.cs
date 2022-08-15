@@ -13,11 +13,25 @@ public class AddPlayerControl : MonoBehaviour
 
     // Update is called once per frame
     void FixedUpdate()
-    {   
-        if (Input.GetKey(KeyPositive))
-            GetComponent<Rigidbody>().velocity += v3Force;
-        if (Input.GetKey(KeyNegative))
-            GetComponent<Rigidbody>().velocity -= v3Force;
+    {
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                // Insert Code Here (I.E. Load Scene, Etc)
+                Application.Quit();
+
+                return;
+            }
+        }
+        else 
+        {
+            if (Input.GetKey(KeyPositive))
+            { GetComponent<Rigidbody>().velocity += v3Force; }
+            if (Input.GetKey(KeyNegative))
+            {
+                GetComponent<Rigidbody>().velocity -= v3Force;
+            }
+                }
     }
-        
 }
